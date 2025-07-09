@@ -37,6 +37,10 @@ page 50013 customerApi
                 {
                     Caption = 'Post Code';
                 }
+                field(customerPriceGroup; Rec."Customer Price Group")
+                {
+                    Caption = 'Customer Price Group';
+                }
             }
         }
     }

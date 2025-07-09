@@ -14,6 +14,8 @@ page 50004 SalesPrice
     EntitySetName = 'salesPriceAPI';
     PageType = API;
     SourceTable = "Price List Line";
+     SourceTableView = where (Status = const(Active));
+
     
     layout
     {
@@ -21,9 +23,9 @@ page 50004 SalesPrice
         {
             repeater(General)
             {
-                field(productNo; Rec."Product No.")
+                field(itemNo; Rec."Product No.")
                 {
-                    Caption = 'Product No.';
+                    Caption = 'Item No.';
                 }
                 field(description; Rec.Description)
                 {
@@ -33,13 +35,10 @@ page 50004 SalesPrice
                 {
                     Caption = 'Unit Price';
                 }
-                field(lineNo; Rec."Line No.")
+                
+                field(customerPriceGroup; Rec."Assign-to No.")
                 {
-                    Caption = 'Line No.';
-                }
-                field(assignToNo; Rec."Assign-to No.")
-                {
-                    Caption = 'Assign-to No.';
+                    Caption = 'Customer Price Group';
                 }
             }
         }
