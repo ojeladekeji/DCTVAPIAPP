@@ -41,6 +41,11 @@ table 50000 CustPayment
         {
             Caption = 'Status';
         }
+
+         field(10; PostingDate; Date)
+        {
+            Caption = 'Posting Date';
+        }
     }
     keys
     {

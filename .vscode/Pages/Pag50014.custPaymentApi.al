@@ -55,6 +55,12 @@ page 50014 custPaymentApi
                 {
                     Caption = 'Status';
                 }
+
+                field(PostingDate; Rec.PostingDate)
+                {
+                    Caption = 'Posting Date';
+                }
+              
             }
         }
     }

@@ -18,5 +18,6 @@ permissionset 50000 APIPermission
         table CustPayment=X,
         page customerApi=X,
         page custPaymentApi=X,
-        page vendorApi=X;
+        page vendorApi=X,
+        codeunit PaymentAuto=X;
 }
