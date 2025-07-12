@@ -10,7 +10,7 @@ page 50017 custPayment
     InsertAllowed = false;
     CardPageId = "Cust Payment Card";
    
- //   SourceTableView = where (Status = const('PENDING'));
+   SourceTableView = where (Status = const('PENDING'));
 
     layout
     {
