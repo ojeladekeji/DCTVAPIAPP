@@ -12,16 +12,27 @@ table 50000 CustPayment
         field(2; "Customer No"; Code[20])
         {
             Caption = 'Customer No';
+            TableRelation = Customer."No.";             
+        trigger OnValidate()
+            var
+                CustomerRec: Record Customer;
+            begin
+                if CustomerRec.Get("Customer No") then
+                    "Customer Name" := CustomerRec.Name
+                else
+                    "Customer Name" := '';
+            end;
+
         }
         field(3; "Customer Name"; Text[250])
         {
             Caption = 'Customer Name';
         }
-        field(4; "Deposit By"; Text[50])
+        field(4; debtorName; Text[50])
         {
-            Caption = 'Deposit By';
+            Caption = 'Debtor Name';
         }
-        field(5; Reference; Text[50])
+        field(5; Reference; Text[250])
         {
             Caption = 'Reference';
         }
@@ -29,23 +40,35 @@ table 50000 CustPayment
         {
             Caption = 'Amount';
         }
-        field(7; "Bank Code"; Code[20])
-            {
-                Caption = 'Bank Code';
-        }
-        field(8; ChargeAmount; Decimal)
-        {
-            Caption = 'Charge Amount';
-        }
+       
         field(9; Status; Text[20])
         {
             Caption = 'Status';
+        }
+
+        
+        field(11; bankCode; Code[20])
+        {
+            Caption = 'Bank Code';
         }
 
          field(10; PostingDate; Date)
         {
             Caption = 'Posting Date';
         }
+
+        field(12; matched; Boolean)
+        {
+            Caption = 'Matched';
+        }
+
+        
+        field(13; transactionCode; Text[50])
+        {
+            Caption = 'Transaction Code';
+        }
+
+
     }
     keys
     {

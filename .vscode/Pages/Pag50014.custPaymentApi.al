@@ -35,17 +35,14 @@ page 50014 custPaymentApi
                 {
                     Caption = 'Amount';
                 }
-                field(chargeAmount; Rec.ChargeAmount)
-                {
-                    Caption = 'Charge Amount';
-                }
-                field(bankCode; Rec."Bank Code")
+               
+                field(bankCode; Rec.BankCode)
                 {
                     Caption = 'Bank Code';
                 }
-                field(depositBy; Rec."Deposit By")
+                field(debtorName; Rec.DebtorName)
                 {
-                    Caption = 'Deposit By';
+                    Caption = 'Debtor Name';
                 }
                 field(reference; Rec.Reference)
                 {
@@ -60,6 +57,16 @@ page 50014 custPaymentApi
                 {
                     Caption = 'Posting Date';
                 }
+                field(matched; Rec.matched)
+                {
+                    Caption = 'Matched';
+                }
+                field(transactionCode; Rec.transactionCode)
+                {
+                    Caption = 'Transaction Code';
+                }
+               
+
               
             }
         }
