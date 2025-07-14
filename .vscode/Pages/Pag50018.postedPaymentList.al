@@ -10,6 +10,7 @@ page 50018 postedPaymentList
     Editable = false;
     CardPageId = "Cust Payment Card";
     InsertAllowed = false;
+    SourceTableView = where (Status = const('POSTED'));
     
     layout
     {

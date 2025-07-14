@@ -19,5 +19,10 @@ permissionset 50000 APIPermission
         page customerApi=X,
         page custPaymentApi=X,
         page vendorApi=X,
-        codeunit PaymentAuto=X;
+        codeunit PaymentAuto=X,
+        page appliedEntriesApi=X,
+        page "Cust Payment Card"=X,
+        page custPayment=X,
+        page openInvoiceApi=X,
+        page postedPaymentList=X;
 }
