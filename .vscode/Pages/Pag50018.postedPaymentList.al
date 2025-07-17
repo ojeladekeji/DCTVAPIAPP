@@ -33,6 +33,9 @@ page 50018 postedPaymentList
                 field(Amount; Rec.Amount)
                 {
                 }
+
+                field(invoiceno;Rec.invoiceno)
+                {}
                 field(Reference; Rec.Reference)
                 {
                 }
@@ -45,6 +48,8 @@ page 50018 postedPaymentList
                 field(Status; Rec.Status)
                 {
                 }
+
+                
             }
         }
     }

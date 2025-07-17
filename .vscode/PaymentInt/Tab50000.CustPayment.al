@@ -62,10 +62,16 @@ table 50000 CustPayment
             Caption = 'Matched';
         }
 
+
         
         field(13; transactionCode; Text[50])
         {
             Caption = 'Transaction Code';
+        }
+
+        field(14; invoiceno; Code[20])
+        {
+            Caption = 'Invoice No.';
         }
 
 

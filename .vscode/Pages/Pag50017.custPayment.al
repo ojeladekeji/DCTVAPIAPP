@@ -39,6 +39,12 @@ page 50017 custPayment
                 {
                     Editable = false;
                 }
+
+                field(invoiceno;Rec.invoiceno)
+                {
+                    Caption = 'Invoice no';
+                }
+
                 field(Reference; Rec.Reference)
                 {
                     Editable = false;

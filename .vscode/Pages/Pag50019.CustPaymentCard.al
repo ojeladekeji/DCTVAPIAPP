@@ -45,6 +45,11 @@ page 50019 "Cust Payment Card"
                 {
                     Editable = false;   
                 }
+
+                field(invoiceno;Rec.invoiceno)
+                {
+                  
+                }
             }
             group(BankDetails)
             {
