@@ -20,12 +20,14 @@ procedure PostPayment()
         Bank: Record "Bank Account";
         bankaccount: Code[20];
         cust: Record Customer;
+        GenJnlPostBatch: Codeunit "Gen. Jnl.-Post Batch";
+
         LineNo: Integer;
 begin
     CustPay.SetRange(Status, 'PENDING');
     CustPay.SetFilter("Customer No", '<>%1', '');
     
-    if not CustPay.FindFirst() then
+    if not CustPay.FindSet() then
         exit; 
 
   
@@ -36,9 +38,8 @@ begin
 
     LineNo := 10000;
 
-    if CustPay.FindFirst() then
-        repeat
-            if cust.Get(CustPay."Customer No") then begin
+    repeat
+        if cust.Get(CustPay."Customer No") then begin
                 GenJournalLine.Init();
                 GenJournalLine."Journal Template Name" := 'GENERAL';
                 GenJournalLine."Journal Batch Name" := 'SANPOST';
@@ -52,10 +53,7 @@ begin
                 GenJournalLine.Description := CopyStr(CustPay.Reference, 1, 50);
                 GenJournalLine.Amount := -CustPay.Amount;
                 GenJournalLine.Validate(Amount);
-                if CustPay.invoiceno <> '' then begin
-                    GenJournalLine."Applies-to Doc. Type" := GenJournalLine."Applies-to Doc. Type"::Invoice;
-                    GenJournalLine.Validate("Applies-to Doc. No.", CustPay.invoiceno);                   
-                end;
+               
                 GenJournalLine.Validate("Bal. Account Type", GenJournalLine."Bal. Account Type"::"Bank Account");
                 Bank.SetRange("Bank Account No.", CustPay.bankCode);
                 if Bank.FindFirst() then
@@ -69,7 +67,7 @@ begin
                 end;
             end;
         until CustPay.Next() = 0;
-       GenJnlPostLine.Run(GenJournalLine);
+       GenJnlPostBatch.Run(GenJournalLine);
         CustPay.Reset(); 
         CustPay.SetRange(Status, 'READY_TO_POST');
 

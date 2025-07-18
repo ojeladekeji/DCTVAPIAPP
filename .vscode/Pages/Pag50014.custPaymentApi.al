@@ -66,11 +66,6 @@ page 50014 custPaymentApi
                     Caption = 'Transaction Code';
                 }
 
-                field(invoiceno;Rec.invoiceno)
-                {
-
-                }
-               
 
               
             }

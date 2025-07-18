@@ -34,8 +34,6 @@ page 50018 postedPaymentList
                 {
                 }
 
-                field(invoiceno;Rec.invoiceno)
-                {}
                 field(Reference; Rec.Reference)
                 {
                 }

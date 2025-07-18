@@ -69,10 +69,6 @@ table 50000 CustPayment
             Caption = 'Transaction Code';
         }
 
-        field(14; invoiceno; Code[20])
-        {
-            Caption = 'Invoice No.';
-        }
 
 
     }
