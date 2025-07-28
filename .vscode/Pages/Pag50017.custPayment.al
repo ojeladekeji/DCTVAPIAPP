@@ -50,9 +50,9 @@ page 50017 custPayment
                 {
                     Editable = false;
                 }
-                field(matched; Rec.matched)
+                field(Confirm; Rec.Confirm)
                 {
-                    Editable = false;
+                    Editable = true;
                 }
                 field(Status; Rec.Status)
                 {

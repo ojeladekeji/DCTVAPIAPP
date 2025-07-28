@@ -69,6 +69,11 @@ table 50000 CustPayment
             Caption = 'Transaction Code';
         }
 
+        field(14; Confirm; Boolean)
+        {
+            Caption = 'Confirm';
+        }
+       
 
 
     }

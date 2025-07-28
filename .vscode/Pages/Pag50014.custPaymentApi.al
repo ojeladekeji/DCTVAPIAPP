@@ -66,6 +66,11 @@ page 50014 custPaymentApi
                     Caption = 'Transaction Code';
                 }
 
+                field(confirm; Rec.Confirm)
+                {
+                    Caption = 'Confirm';
+                }
+
 
               
             }

@@ -26,6 +26,8 @@ procedure PostPayment()
 begin
     CustPay.SetRange(Status, 'PENDING');
     CustPay.SetFilter("Customer No", '<>%1', '');
+    CustPay.SetRange(Confirm, true);
+
     
     if not CustPay.FindSet() then
         exit; 
